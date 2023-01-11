@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/jizu_preview.jpg">
 <meta property="article:published_time" content="2022-12-28T12:48:19.000Z">
-<meta property="article:modified_time" content="2023-01-10T14:57:16.963Z">
+<meta property="article:modified_time" content="2023-01-11T11:39:44.878Z">
 <meta property="article:author" content="Chao">
 <meta property="article:tag" content="考研">
 <meta property="article:tag" content="计组">
@@ -670,21 +670,27 @@
 <li>80-20规律：80%的语句只用到20%的指令</li>
 </ul>
 <h2 id="第五章-中央处理器"><a class="markdownIt-Anchor" href="#第五章-中央处理器"></a> 第五章 中央处理器</h2>
-<h2 id="cpu结构"><a class="markdownIt-Anchor" href="#cpu结构"></a> CPU结构</h2>
+<h3 id="cpu结构"><a class="markdownIt-Anchor" href="#cpu结构"></a> CPU结构</h3>
 <ul>
 <li>用户可见的寄存器：通用寄存器、程序状态字寄存器PSW、程序计数器PC</li>
 <li>用户不可见寄存器：MAR、MDR、IR、暂存寄存器</li>
 <li>管理多条通路：多路选择器MUX与三态门</li>
 <li>MAR和MDR属于CPU</li>
 </ul>
-<h2 id="指令周期"><a class="markdownIt-Anchor" href="#指令周期"></a> 指令周期</h2>
+<h3 id="指令周期"><a class="markdownIt-Anchor" href="#指令周期"></a> 指令周期</h3>
 <p><img src="/img/content/jizu_preview/instruction_cycle.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
-<h2 id="内部总线方式"><a class="markdownIt-Anchor" href="#内部总线方式"></a> 内部总线方式</h2>
+<h3 id="内部总线方式"><a class="markdownIt-Anchor" href="#内部总线方式"></a> 内部总线方式</h3>
 <ul>
 <li>ALU只能有一个输入端与总线相连，另一个输入端需要通过暂存器与总线相连</li>
 <li>ALU的输出端通过暂存器与总线相连</li>
 </ul>
 <p><img src="/img/content/jizu_preview/inner_bus.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
+<h3 id="安排微操作时序的原则"><a class="markdownIt-Anchor" href="#安排微操作时序的原则"></a> 安排微操作时序的原则</h3>
+<ul>
+<li>微操作的先后顺序不得随意更改</li>
+<li>被控对象不同的微操作尽量安排在一个节拍内完成</li>
+<li>占用时间较短的微操作尽量安排在一个节拍内完成，并运行有先后顺序</li>
+</ul>
 <h3 id="知识点-5"><a class="markdownIt-Anchor" href="#知识点-5"></a> 知识点</h3>
 <ul>
 <li>通用寄存器是可编程指定多种功能的寄存器</li>
