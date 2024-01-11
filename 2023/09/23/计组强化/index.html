@@ -1,0 +1,1125 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>计组强化 | 去他妈的生活</title><meta name="author" content="Chao"><meta name="copyright" content="Chao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="计算机系统概述 MAR和MDR是存储器的一部分，但是在现代计算机中，MAR和MDR在CPU中 CPU&#x3D;运算器+控制器 主机&#x3D;CPU+主存 系统软件和应用软件的区别  数据库管理系统DBMS，语言处理程序属于系统软件 软件数据库系统、文本处理系统属于应用软件  从源程序到可执行文件：预处理-&gt;编译-&gt;汇编-&gt;链接 解释程序和编译程序  解释器：按顺序逐条翻译成机器指令并立即执行 编">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计组强化">
+<meta property="og:url" content="http://chaoblog.site/2023/09/23/%E8%AE%A1%E7%BB%84%E5%BC%BA%E5%8C%96/index.html">
+<meta property="og:site_name" content="去他妈的生活">
+<meta property="og:description" content="计算机系统概述 MAR和MDR是存储器的一部分，但是在现代计算机中，MAR和MDR在CPU中 CPU&#x3D;运算器+控制器 主机&#x3D;CPU+主存 系统软件和应用软件的区别  数据库管理系统DBMS，语言处理程序属于系统软件 软件数据库系统、文本处理系统属于应用软件  从源程序到可执行文件：预处理-&gt;编译-&gt;汇编-&gt;链接 解释程序和编译程序  解释器：按顺序逐条翻译成机器指令并立即执行 编">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://chaoblog.site/img/series/jz_qh/jz.jpg">
+<meta property="article:published_time" content="2023-09-23T12:03:27.000Z">
+<meta property="article:modified_time" content="2024-01-11T08:22:32.587Z">
+<meta property="article:author" content="Chao">
+<meta property="article:tag" content="408">
+<meta property="article:tag" content="计算机组成原理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://chaoblog.site/img/series/jz_qh/jz.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://chaoblog.site/2023/09/23/%E8%AE%A1%E7%BB%84%E5%BC%BA%E5%8C%96/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":500},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计组强化',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-01-11 16:22:32'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.0.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友联</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/series/jz_qh/jz.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="去他妈的生活"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg"/></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友联</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">计组强化</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-23T12:03:27.000Z" title="发表于 2023-09-23 20:03:27">2023-09-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-11T08:22:32.587Z" title="更新于 2024-01-11 16:22:32">2024-01-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%80%83%E7%A0%94/">考研</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">7.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>22分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="计算机系统概述">计算机系统概述</h2>
+<p>MAR和MDR是存储器的一部分，但是在现代计算机中，MAR和MDR在CPU中</p>
+<p>CPU=运算器+控制器</p>
+<p>主机=CPU+主存</p>
+<p>系统软件和应用软件的区别</p>
+<ul>
+<li>数据库管理系统DBMS，语言处理程序属于系统软件</li>
+<li>软件数据库系统、文本处理系统属于应用软件</li>
+</ul>
+<p>从源程序到可执行文件：预处理-&gt;编译-&gt;汇编-&gt;链接</p>
+<p>解释程序和编译程序</p>
+<ul>
+<li>解释器：按顺序逐条翻译成机器指令并立即执行</li>
+<li>编译器：将高级语言翻译成汇编语言/机器语言</li>
+<li>解析过程慢，编译过程快</li>
+</ul>
+<p>软硬件之间的界面是指令集体系结构ISA（规定了一台计算机可执行的所有指令的集合）</p>
+<ul>
+<li>ISA处于软硬件的交界面上</li>
+<li>ISA规定的主要内容
+<ul>
+<li>指令格式</li>
+<li>数据类型、数据格式</li>
+<li>操作数的存取方式</li>
+<li>寄存器个数</li>
+<li>存储空间大小和编址方式</li>
+<li>寻址方式</li>
+<li>指令执行过程的控制方式</li>
+</ul>
+</li>
+</ul>
+<p>IR、MAR和MDR对程序员透明</p>
+<p>MFLOPS：每秒执行多少百万次浮点运行（依次乘1000）<br>
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>F</mi><mi>L</mi><mi>O</mi><mi>P</mi><mi>S</mi><mo>−</mo><mo>&gt;</mo><mi>G</mi><mi>F</mi><mi>L</mi><mi>O</mi><mi>P</mi><mi>S</mi><mo>−</mo><mo>&gt;</mo><mi>T</mi><mi>F</mi><mi>L</mi><mi>O</mi><mi>P</mi><mi>S</mi><mo>−</mo><mo>&gt;</mo><mi>P</mi><mi>F</mi><mi>L</mi><mi>O</mi><mi>P</mi><mi>S</mi><mo>−</mo><mo>&gt;</mo><mi>Z</mi><mi>F</mi><mi>L</mi><mi>O</mi><mi>P</mi><mi>S</mi></mrow><annotation encoding="application/x-tex">MFLOPS-&gt;GFLOPS-&gt;TFLOPS-&gt;PFLOPS-&gt;ZFLOPS</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord">−</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord">−</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord">−</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord">−</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/series/jz_qh/p1.jpg" alt=""></p>
+<h2 id="数据的表示和运算">数据的表示和运算</h2>
+<p>在计算地址运算时，若地址+偏移量（补码表示）</p>
+<ul>
+<li>先对偏移量进行符号扩展，正数在左边添0，负数在左边添1</li>
+<li>然后对其进行加法运算</li>
+</ul>
+<p>字长</p>
+<ul>
+<li>机器字长：指的是CPU运算精度，机器字长=ALU位数=通用寄存器位数</li>
+<li>存储字长：指的是CPU一个主存地址中的数据量，访存每次取一个存储字长的数据量，按字节编址则存储字长=1B，按字编址则存储字长为1字，存储字长=MDR位数=数据线位数（通常机器字长是存储字长的整数倍）</li>
+<li>指令字长：指的是单指令的长度，指令字长=IR位数</li>
+</ul>
+<p>MAR的位数=地址线位数=地址空间大小/存储字长=PC长度<br>
+MDR的位数=数据线位数=存储字长=按什么编址<br>
+ALU位数=字长=通用寄存器位数<br>
+指令字长=IR位数</p>
+<p>最低有效字节：权值最大的字节，如在二进制表示中，越靠前的权重越大，则最低有效字节为最后一个字节<br>
+最低有效字节：权重最小的字节，如在二进制表示中，越靠前的权重越大，则最高有效字节为第一个字节</p>
+<p>带标志加法器</p>
+<ul>
+<li>零标志ZF（运算结果是否为0）
+<ul>
+<li>ZF=0表示不为0，ZF=1表示0</li>
+<li>对有符号数和无符号数都有意义</li>
+</ul>
+</li>
+<li>符号标志SF（有符号数的加减运算结果的正负）
+<ul>
+<li>SF=0表示正数，SF=1表示负数</li>
+<li>只对有符号数有意义，对无符号数没有意义（将两操作数当作有符号数计算）</li>
+</ul>
+</li>
+<li>溢出标志OF（有符号数的加减运算是否发生溢出）
+<ul>
+<li>OF=0表示未溢出，OF=1表示溢出</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mi>F</mi><mo>=</mo><msub><mi>C</mi><mi>n</mi></msub><mo>⨁</mo><msub><mi>C</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">OF=C_n\bigoplus C_{n-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.00001em;vertical-align:-0.25001em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">⨁</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span></span></span></span>（最高位进位异或次高位进位）</li>
+<li>只对有符号数有意义，对无符号数没有意义（将两操作数当作有符号数计算）</li>
+</ul>
+</li>
+<li>进位/借位标志CF（无符号数是否发生进位/借位）
+<ul>
+<li>CF=0表示未发生进位/借位，CF=1表示发生进位/借位</li>
+<li>无符号加法时，溢出则CF=1</li>
+<li>无符号减法时，被减数&lt;减数（不够减，结果为负数）则CF=1</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>F</mi><mo>=</mo><msub><mi>C</mi><mi>n</mi></msub><mo>⨁</mo><msub><mi>C</mi><mrow><mi>i</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">CF=C_n\bigoplus C_{in}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.00001em;vertical-align:-0.25001em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">⨁</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>（最高位的进位异或Sub位（减法为1，加法为0））</li>
+<li>只对无符号数有意义，对带符号数没有意义（将两操作数当作无符号数计算）</li>
+</ul>
+</li>
+<li>有符号运算溢出看<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mi>F</mi></mrow><annotation encoding="application/x-tex">OF</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span></span></span></span></li>
+<li>无符号运算溢出看<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>F</mi></mrow><annotation encoding="application/x-tex">CF</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span></span></span></span></li>
+<li>有符号数加减操作
+<ul>
+<li>判断结果为0：ZF==1</li>
+<li>判断结果不为0：ZF==0</li>
+<li>判断结果大于0：<span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;&amp;&#039; at position 7: ZF==0 &amp;̲&amp; SF==0'>ZF==0 &amp;&amp; SF==0</span></li>
+<li>判断结果大于等于0：SF==OF</li>
+<li>判断结果小于0：SF!=OF</li>
+<li>判断结果小于等于0：SF!=OF || ZF==1</li>
+</ul>
+</li>
+<li>无符号数加减操作
+<ul>
+<li>判断大于0：<span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;&amp;&#039; at position 7: CF==0 &amp;̲&amp; ZF==0'>CF==0 &amp;&amp; ZF==0</span></li>
+</ul>
+</li>
+</ul>
+<p>二进制表示<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.1111...</mn><mtext>（</mtext><mi>n</mi><mtext>个</mtext><mn>1</mn><mtext>）</mtext><mo>=</mo><mn>2</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">1.1111...（n个1）=2-2^{-n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord cjk_fallback">（</span><span class="mord mathdefault">n</span><span class="mord cjk_fallback">个</span><span class="mord">1</span><span class="mord cjk_fallback">）</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.771331em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.771331em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span></span>十进制表示</p>
+<p>IEEE754标准</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>数符号</th>
+<th>阶码</th>
+<th>尾数</th>
+<th>总计</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>float</td>
+<td>1</td>
+<td>8</td>
+<td>23</td>
+<td>32</td>
+</tr>
+<tr>
+<td>double</td>
+<td>1</td>
+<td>11</td>
+<td>52</td>
+<td>64</td>
+</tr>
+</tbody>
+</table>
+<p>IEEE中特殊表示</p>
+<ul>
+<li>阶码全0，尾数全为0，表示真值<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>±</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\pm0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">±</span><span class="mord">0</span></span></span></span></li>
+<li>阶码全1，尾数全为0，表示无穷大<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>±</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\pm\infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">±</span><span class="mord">∞</span></span></span></span></li>
+<li>阶码全0，尾数不全为0，表示默认最高有效位为0，即<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.</mn><mi>M</mi><mo>×</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>126</mn></mrow></msup></mrow><annotation encoding="application/x-tex">0.M\times2^{-126}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span><span class="mord mtight">2</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span></span></li>
+<li>阶码全1，尾数不全为0，表示非数值<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>a</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">NaN</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span></li>
+</ul>
+<p>只有规格化后的阶码超出范围才发送溢出</p>
+<p>在移码表示中：</p>
+<ul>
+<li>第一位为符号位，正数取1，负数取0</li>
+<li>移码+1=-补码，例如移码<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1110</mn></mrow><annotation encoding="application/x-tex">1110</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span><span class="mord">0</span></span></span></span>表示补码<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0111</mn></mrow><annotation encoding="application/x-tex">0111</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span></span></span></span></li>
+<li>8为移码所能表示的最小值为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>00000001</mn><mo>=</mo><mo>−</mo><mn>126</mn></mrow><annotation encoding="application/x-tex">0000 0001=-126</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mord">2</span><span class="mord">6</span></span></span></span>，最大值为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>11111110</mn><mo>=</mo><mn>127</mn></mrow><annotation encoding="application/x-tex">11111110=127</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">2</span><span class="mord">7</span></span></span></span></li>
+<li>阶码的全0和全1用作其他用途</li>
+</ul>
+<p>小端存储方式中，变量的地址仍然为第一个字节的地址（最左边）</p>
+<ul>
+<li>例如：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mi>n</mi><mi>t</mi><mi>a</mi><mo>=</mo><mn>1234</mn><mi>H</mi></mrow><annotation encoding="application/x-tex">int a=12 34H</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">2</span><span class="mord">3</span><span class="mord">4</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span></span></span></span>，在机器中为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3412</mn></mrow><annotation encoding="application/x-tex">34 12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">4</span><span class="mord">1</span><span class="mord">2</span></span></span></span>，变量<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span>的地址为字节<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>34</mn></mrow><annotation encoding="application/x-tex">34</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">4</span></span></span></span>所在地址</li>
+</ul>
+<p>无损转换：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mi>h</mi><mi>a</mi><mi>r</mi><mo>−</mo><mo>&gt;</mo><mi>i</mi><mi>n</mi><mi>t</mi><mo>−</mo><mo>&gt;</mo><mi>l</mi><mi>o</mi><mi>n</mi><mi>g</mi><mo>−</mo><mo>&gt;</mo><mi>d</mi><mi>o</mi><mi>u</mi><mi>b</mi><mi>l</mi><mi>e</mi><mo separator="true">,</mo><mi>f</mi><mi>l</mi><mi>o</mi><mi>a</mi><mi>t</mi><mo>−</mo><mo>&gt;</mo><mi>d</mi><mi>o</mi><mi>u</mi><mi>b</mi><mi>l</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">char-&gt;int-&gt;long-&gt;double,float-&gt;double</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">h</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord">−</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mord">−</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord">−</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">b</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord">−</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">b</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">e</span></span></span></span><br>
+有损转换：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mi>n</mi><mi>t</mi><mo>−</mo><mo>&gt;</mo><mi>f</mi><mi>l</mi><mi>o</mi><mi>a</mi><mi>t</mi><mo separator="true">,</mo><mi>f</mi><mi>l</mi><mi>o</mi><mi>a</mi><mi>t</mi><mo>−</mo><mo>&gt;</mo><mi>i</mi><mi>n</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">int-&gt;float,float-&gt;int</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mord">−</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord">−</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span></span></span></span><br>
+重点：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mi>n</mi><mi>t</mi><mo>−</mo><mo>&gt;</mo><mi>f</mi><mi>l</mi><mi>o</mi><mi>a</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">int-&gt;float</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mord">−</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span></span></span></span></p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mi>n</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">int</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span></span></span></span>为32位</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>l</mi><mi>o</mi><mi>a</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">float</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span></span></span></span>为1符号位+8阶码+23尾数</li>
+<li>若<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mi>n</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">int</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span></span></span></span>的有效位数超过23位，则转换为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>l</mi><mi>o</mi><mi>a</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">float</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span></span></span></span>时会丢失位</li>
+<li>若<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mi>n</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">int</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span></span></span></span>的有效位数不超过23位，则转换时为无损转换</li>
+</ul>
+<p>海明码</p>
+<ul>
+<li>(7,4)海明码：总共7位，包括3位校验位，4位数据位，能纠正1位错误</li>
+<li>(15,11)海明码：总共15位，包括4位校验位，11位数据位，能纠正2位错误</li>
+</ul>
+<p>浮点数的加减运算</p>
+<ul>
+<li>步骤：对阶-&gt;尾数求和-&gt;规格化-&gt;舍入-&gt;溢出判断</li>
+<li>规格化
+<ul>
+<li>左规：尾数的最高位不是有效位，尾数左移，阶码-1</li>
+<li>右规：尾数的有效位进到小数点前面，尾数右移，阶码+1（右规只需一次）</li>
+</ul>
+</li>
+<li>常用结论
+<ul>
+<li>对阶操作不会引起阶码上溢或下溢（小阶-&gt;大阶，当前的大阶是未溢出的，对阶后不可能溢出）</li>
+<li>右规和尾数舍入可能引起阶码上溢（尾数减小，阶码增大）</li>
+<li>左规可能引起阶码下溢（尾数增大、阶码减小）</li>
+<li>尾数溢出不一定溢出，只有阶码溢出才真正溢出</li>
+</ul>
+</li>
+</ul>
+<p>乘法计算溢出判断</p>
+<ul>
+<li>n位<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span>n位，用2n位保存乘积，不会溢出</li>
+<li>n位<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span>n位，用2n位保存中间结果，最后截取末尾n位做乘积
+<ul>
+<li>无符号数乘法：高/前n位全0时不溢出</li>
+<li>有符号数乘法：高/前n+1位全0或全1时不溢出（前n+1位相同）</li>
+</ul>
+</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/series/jz_qh/p2.jpg" alt=""></p>
+<h2 id="存储系统">存储系统</h2>
+<p>RAID（独立冗余磁盘阵列）</p>
+<ul>
+<li>将多个独立的物理磁盘组成一个独立的逻辑盘</li>
+<li>RAID0：无冗余无校验</li>
+<li>RAID1-RAID5：引入了冗余（镜像）或校验</li>
+<li>RAID提供可靠性的机制：引入镜像（互相备份）、奇偶校验</li>
+</ul>
+<p>存取周期=存取时间+恢复时间</p>
+<p>主存和Cache之间的数据调度由硬件自动完成，对所有程序员透明<br>
+主存和辅存之间的数据调动由硬件和存储系统共同完成，对应用程序员透明</p>
+<p>DRAM和SRAM的比较</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>SRAM</th>
+<th>DRAM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>存储信息</td>
+<td>触发器</td>
+<td>晶体管</td>
+</tr>
+<tr>
+<td>破坏性读出</td>
+<td>非</td>
+<td>是</td>
+</tr>
+<tr>
+<td>需要刷新</td>
+<td>不要</td>
+<td>要</td>
+</tr>
+<tr>
+<td>送行列地址</td>
+<td>同时送</td>
+<td>分两次送</td>
+</tr>
+<tr>
+<td>运行速度</td>
+<td>快</td>
+<td>慢</td>
+</tr>
+<tr>
+<td>集成度</td>
+<td>低</td>
+<td>高</td>
+</tr>
+<tr>
+<td>成本</td>
+<td>高</td>
+<td>低</td>
+</tr>
+<tr>
+<td>用途</td>
+<td>Cache</td>
+<td>内存</td>
+</tr>
+</tbody>
+</table>
+<p>DRAM采用地址线复用技术：地址线减半，片选用行通选和列通选代替（2根）</p>
+<p>CDROM（光盘）是只读型存储器，不属于ROM，采用顺序存取（不是随机存取）</p>
+<p>多模块存储器（空间并行技术，降低CPU和主存之间的速度差异）</p>
+<ul>
+<li>单体多字存储器：每个存储体存多个字，总线宽度也为多个字</li>
+<li>多体并行存储器
+<ul>
+<li>高位交叉编址：相当于按列存取，不能提高吞吐量，仍然是顺序方式</li>
+<li>低位交叉编址：相当于按行存取</li>
+</ul>
+</li>
+</ul>
+<p>固态硬盘SSD</p>
+<ul>
+<li>基于闪存</li>
+<li>具有随机访问</li>
+<li>等于U盘</li>
+<li>数据以页为单位读写</li>
+</ul>
+<p>保证DRAM刷新开销最小：存储阵列的行数为r，列数为c</p>
+<ul>
+<li>r和c尽量接近，不要差太多</li>
+<li>DRAM按行刷新，因此r少一点</li>
+</ul>
+<p>Cache的字扩展：<br>
+如用<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>K</mi><mo>×</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">2K\times8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span></span></span></span>的RAM构造<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>16</mn><mi>K</mi><mo>×</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">16K\times8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">6</span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span></span></span></span>的芯片，则<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>K</mi><mo>=</mo><msup><mn>2</mn><mn>11</mn></msup></mrow><annotation encoding="application/x-tex">2K=2^{11}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span>低地址的11位为片内地址，需要<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn><mo>=</mo><msup><mn>2</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">8=2^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span>块，则第11、12、13位为片选地址</p>
+<p>CPU与Cache的数据交换以字为单位<br>
+Cache与主存的数据交换以块为单位</p>
+<p>在全相联映射中，通常采用按内容寻址的相联存储器进行地址映射</p>
+<p>LRU替换算法是堆栈类算法</p>
+<p>Cache写不命中</p>
+<ul>
+<li>写分配法：加载主存块到Cache，更新Cache块，通常与回写法一起</li>
+<li>非写分配法：只写入主存，不调入Cache，通常与全写法一起</li>
+</ul>
+<p>计算Cache的总容量</p>
+<ul>
+<li>Cache行标记项=有效位+一致性维护位+替换控制位+标记位</li>
+<li>Cache行容量=Cache行标记项+行/块大小</li>
+<li>Cache总容量=标记项容量+存储容量=（标记项位数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span>行数）+存储容量</li>
+</ul>
+<p>Cache地址映射表的大小：Cache行数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span>行标记项数</p>
+<p>Cache中的控制位</p>
+<ul>
+<li>有效位：1位，必须有</li>
+<li>一致性维护位：1位，对应Cache写策略（写回法需要）</li>
+<li>替换控制位：对应Cache替换算法
+<ul>
+<li>随机算法不需要替换控制位</li>
+<li>全相联映射中：FIFO/LRU算法需要<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo><mi>log</mi><mo>⁡</mo></mo><mn>2</mn></msub><mo stretchy="false">(</mo><mtext>行数</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log_2(行数)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord cjk_fallback">行</span><span class="mord cjk_fallback">数</span><span class="mclose">)</span></span></span></span>个替换控制位</li>
+<li>组相联映射中：FIFO/LRU算法需要<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo><mi>log</mi><mo>⁡</mo></mo><mn>2</mn></msub><mo stretchy="false">(</mo><mtext>路数</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log_2(路数)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord cjk_fallback">路</span><span class="mord cjk_fallback">数</span><span class="mclose">)</span></span></span></span>个替换控制位</li>
+<li>LRU替换控制位与总共有多少个能被替换的块有关</li>
+</ul>
+</li>
+</ul>
+<p>Cache中的比较器</p>
+<ul>
+<li>比较器的位数=标记位数</li>
+<li>比较器的功能：并行比较分组中所有的标记
+<ul>
+<li>在全相联映射中，比较器个数=Cache行数（每行一个比较器）</li>
+<li>在直接映射中，比较器个数=1</li>
+<li>在k路组相联映射中，比较器个数=k（每组一个比较器）</li>
+</ul>
+</li>
+</ul>
+<p>指令Cache与数据Cache分离的目的：减少冲突</p>
+<p>Cache和TLB都由SRAM组成</p>
+<p>虚拟存储器和Cache的比较</p>
+<ul>
+<li>相同点
+<ul>
+<li>最终目标都是为了提高系统性能</li>
+<li>都把数据划分为小信息块</li>
+<li>都有地址映射、替换算法、更新策略等问题</li>
+<li>都利用局部性原理</li>
+</ul>
+</li>
+<li>不同点
+<ul>
+<li>Cache解决系统速度，虚拟存储器解决主存容量</li>
+<li>Cache全由硬件实现，对所有程序员透明；虚拟存储器由操作系统和硬件共同完成，对系统程序员不透明，对应用程序员透明</li>
+<li>虚拟存储器不命中时对系统性能影响更大</li>
+</ul>
+</li>
+</ul>
+<p>用户程序执行陷入指令发起系统调用进入核心态，系统通过硬件中断机制进入核心态</p>
+<p>段表要给出段的起始地址和长度</p>
+<p>用户可见和不可见的寄存器</p>
+<ul>
+<li>用户可见寄存器
+<ul>
+<li>通用寄存器</li>
+<li>PSW</li>
+<li>PC</li>
+<li>ACC</li>
+<li>基址寄存器</li>
+<li>变址寄存器</li>
+</ul>
+</li>
+<li>用户不可见
+<ul>
+<li>IR</li>
+<li>MAR</li>
+<li>MDR</li>
+<li>Cache</li>
+<li>DR暂存寄存器</li>
+<li>控制寄存器（存放微指令及控制信号）</li>
+<li>微指令寄存器</li>
+</ul>
+</li>
+</ul>
+<p>虚拟存储采用全相联映射和回写法</p>
+<p>页表长久保存在内存中</p>
+<p>脏位=修改位，引用位=最近访问位</p>
+<p>页表基质寄存器存放进程页表的首地址</p>
+<p>快表TLB</p>
+<ul>
+<li>采用全相联映射或组相联映射</li>
+<li>由SRAM实现，不在内存中，在高速缓存中</li>
+</ul>
+<p>TLB、页表、Cache、主存</p>
+<ul>
+<li>TLB和页表的作用是地址转换：虚拟地址-&gt;物理地址（存储的是虚拟地址到物理地址的映射信息）</li>
+<li>Cache和主存的作用是存储数据：根据物理地址访问数据（存储的是数据）</li>
+<li>虚拟存储器的CPU访存流程
+<ul>
+<li>访问TLB：查找该虚拟地址的物理地址</li>
+<li>若TLB未命中，则访问页表，查找该虚拟地址的物理地址</li>
+<li>若页表未命中，则该地址未调入内存，产生缺页中断</li>
+<li>根据TLB和页表查找到物理地址后，用该物理地址访问Cache</li>
+<li>若Cache未命中，则访问主存，取出该数据</li>
+</ul>
+</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/series/jz_qh/p3.jpg" alt=""></p>
+<h2 id="指令系统">指令系统</h2>
+<p>指令周期</p>
+<ul>
+<li>取址周期</li>
+<li>间址周期</li>
+<li>执行周期</li>
+<li>中断周期</li>
+</ul>
+<p>时钟周期、机器周期、指令周期的区别</p>
+<ul>
+<li>指令周期表示一条指令的时间，由若干机器周期组成</li>
+<li>机器周期包括：取址周期、执行周期、间断周期等，由若干时钟周期组成</li>
+<li>时钟周期是最基本、最小的单位</li>
+</ul>
+<p>单周期处理器</p>
+<ul>
+<li>每个指令周期为一个时钟周期，即每个时钟周期执行一条指令</li>
+<li>每条指令的CPI=1</li>
+<li>因为每个指令的指令周期都相等，故要兼容大指令，则时钟周期较长，CPU时钟频率较低</li>
+<li>指令执行过程中控制信号不变</li>
+<li>不能采用单总线结构（单总线将所有寄存器的输入输出端连在同一条通路上，一个时钟内只允许一次操作，无法完成指令的所有操作）</li>
+</ul>
+<p>立即寻址中的立即数通常用补码表示</p>
+<p>基址寻址用于用户操作系统，用于多道程序<br>
+变址寻址面向用户，数组</p>
+<p>堆栈寻址</p>
+<ul>
+<li>硬堆栈：寄存器堆栈，不访存</li>
+<li>软堆栈：访问主存</li>
+</ul>
+<p>在操作控制字段采用字段直接编码法</p>
+<ul>
+<li>互斥性微命令分在同一段内，相容性微命令分在不同段内</li>
+<li>且每个小段要留出一个状态，表示本字段不发出任何微命令</li>
+</ul>
+<p>子程序调用只需要保存断点</p>
+<p>CISC和RISC的比较</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>CISC</th>
+<th>RISC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>指令系统</td>
+<td>复杂庞大</td>
+<td>精简</td>
+</tr>
+<tr>
+<td>指令数目</td>
+<td>一般不大于200条</td>
+<td>一般小于100条</td>
+</tr>
+<tr>
+<td>指令字长</td>
+<td>不固定</td>
+<td>定长</td>
+</tr>
+<tr>
+<td>可访存指令</td>
+<td>不受限制</td>
+<td>只有Load/Store指令</td>
+</tr>
+<tr>
+<td>指令执行时间</td>
+<td>差距很大</td>
+<td>大多在一个周期内完成</td>
+</tr>
+<tr>
+<td>指令使用频率</td>
+<td>差距很大</td>
+<td>都比较常用</td>
+</tr>
+<tr>
+<td>通用寄存器数目</td>
+<td>较少</td>
+<td>很多</td>
+</tr>
+<tr>
+<td>目标代码</td>
+<td>难以优化编译生成高效的目标代码程序</td>
+<td>采用优化的编译程序，生成代码较高效</td>
+</tr>
+<tr>
+<td>控制方式</td>
+<td>大多是微程序控制</td>
+<td>大多为硬布线控制</td>
+</tr>
+<tr>
+<td>指令流水线</td>
+<td></td>
+<td>必须实现</td>
+</tr>
+</tbody>
+</table>
+<p>CPI</p>
+<ul>
+<li>单周期CPU、基本流水线的CPI都为1</li>
+<li>多周期CPU的CPI&gt;1</li>
+<li>超标量流水线的CPI&lt;1</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/series/jz_qh/p4.jpg" alt=""></p>
+<h2 id="中央处理器">中央处理器</h2>
+<p>取指周期的时序</p>
+<ul>
+<li>PC-&gt;MAR：PCout、MARin</li>
+<li>M(MAR)-&gt;MDR：Read、MDRin</li>
+<li>MDR-&gt;IR：MDRout、IRin</li>
+</ul>
+<p>异常大多采用软件识别，中断处理由软硬件协同实现</p>
+<p>数据通路：将指令执行过程中数据经过的部件</p>
+<ul>
+<li>ALU</li>
+<li>通用寄存器</li>
+<li>状态寄存器</li>
+<li>Cache</li>
+<li>MMU</li>
+<li>浮点运算逻辑</li>
+<li>异常和中断处理逻辑</li>
+<li>数据通路由控制部件控制，但不包括控制部件</li>
+<li>数据通路=逻辑操作单元（不包含存储记忆单元）+时序逻辑状态单元（包含存储记忆单元）</li>
+<li>操作逻辑单元
+<ul>
+<li>加法器</li>
+<li>AL</li>
+<li>译码器</li>
+<li>多路选择器</li>
+<li>三态门</li>
+</ul>
+</li>
+<li>时序逻辑状态单元
+<ul>
+<li>存储器</li>
+<li>寄存器</li>
+</ul>
+</li>
+</ul>
+<p>硬布线控制器和微程序控制器的对比</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>微程序控制器</th>
+<th>硬布线控制器</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>工作原理</td>
+<td>微操作控制信号以微程序的形式存放在控制存储器中，执行指令时读出即可</td>
+<td>微操作控制信号由组合逻辑电路根据当前指令码、状态和时序即刻产生</td>
+</tr>
+<tr>
+<td>执行速度</td>
+<td>慢</td>
+<td>快</td>
+</tr>
+<tr>
+<td>规整性</td>
+<td>规整</td>
+<td>繁琐，不规则</td>
+</tr>
+<tr>
+<td>应用场合</td>
+<td>CISC</td>
+<td>RISC</td>
+</tr>
+<tr>
+<td>扩充性</td>
+<td>易扩充</td>
+<td>不易扩充</td>
+</tr>
+</tbody>
+</table>
+<p>控制存储器CM和主存储器MM的区别</p>
+<ul>
+<li>主存储器MM在CPU外部，存储数指令和数据，用RAM实现，按主存地址访问</li>
+<li>控制存储器CM在CPU内部的控制器中，存储微指令，用ROM实现，按微指令地址访问</li>
+</ul>
+<p>对应单周期CPU：一个指令周期=一个时钟周期，每个时钟周期执行一条新指令</p>
+<p>流水线</p>
+<ul>
+<li>提高处理机并行性的两种办法
+<ul>
+<li>流水线技术：时间上并行</li>
+<li>超标量处理机：空间上并行，设置多个功能部件</li>
+</ul>
+</li>
+<li>指令流水线设计原则
+<ul>
+<li>流水段个数以最复杂指令所用功能段个数为基准</li>
+<li>流水段长度以最复杂/最长的操作时间为基准</li>
+</ul>
+</li>
+<li>流水线不能缩短单条指令的执行时间，但能提高整个程序的执行效率</li>
+</ul>
+<p>流水线的冒险与处理</p>
+<ul>
+<li>结构冒险（资源冲突）
+<ul>
+<li>原因：竞争硬件资源</li>
+<li>解决
+<ul>
+<li>指令暂停时钟一个时钟周期</li>
+<li>指令Cache和数据Cache分离</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>数据冒险（数据冲突）
+<ul>
+<li>原因
+<ul>
+<li>写后读</li>
+<li>读后写</li>
+<li>写后写</li>
+</ul>
+</li>
+<li>解决
+<ul>
+<li>指令暂停几个时钟周期，硬件阻塞/软件插入NOP</li>
+<li>数据旁路技术：设置专用通路
+<ul>
+<li>数据旁路只是解决了寄存器组之间的数据冒险，若存取主存数据则数据旁路失效</li>
+</ul>
+</li>
+<li>调整指令顺序</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>控制冒险（控制冲突）
+<ul>
+<li>分支预测</li>
+<li>预取指令</li>
+<li>提前形成条件码</li>
+</ul>
+</li>
+</ul>
+<p>多处理器的分类</p>
+<ul>
+<li>SISD
+<ul>
+<li>单指令流单数据流</li>
+<li>特征
+<ul>
+<li>各指令只能并发，不能并行，每条指令处理一两个数据</li>
+<li>不是数据级并行技术</li>
+</ul>
+</li>
+<li>硬件组成
+<ul>
+<li>一个处理器+一个主存储器</li>
+<li>若采用指令流水线，需要设置多个功能部件，采用多模块交叉存储器</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SIMD
+<ul>
+<li>单指令流多数据流</li>
+<li>特征
+<ul>
+<li>各指令只能并发，不能并行，但每条指令可同时处理多个具有相同特征的数据</li>
+<li>是一种数据级并行技术</li>
+</ul>
+</li>
+<li>硬件组成
+<ul>
+<li>CU+多个处理单元ALU+一个主存储器</li>
+<li>多个处理单元有各自的寄存器组、局部存储器、地址存储器</li>
+<li>不同处理单元执行同一条指令，处理不同的数据</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>MIMD
+<ul>
+<li>多指令流多数据流</li>
+<li>特征
+<ul>
+<li>各指令并行执行，分别处理多个不同的数据</li>
+<li>是一种线程级并行，甚至是进程级并行</li>
+</ul>
+</li>
+<li>分类
+<ul>
+<li>多处理器系统
+<ul>
+<li>特征
+<ul>
+<li>各处理器之间共享同一个主存储器，可通过主存相互传送数据</li>
+</ul>
+</li>
+<li>硬件组成
+<ul>
+<li>多个处理器+一个主存储器</li>
+<li>多个处理器共享单一的物理地址空间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>多计算机系统
+<ul>
+<li>特征
+<ul>
+<li>各计算机之间不能访问对方存储器，只能通过消息传递互相传送数据</li>
+</ul>
+</li>
+<li>硬件组成
+<ul>
+<li>多个处理器+多个主存储器</li>
+<li>每台计算机拥有各自的私有存储器，物理地址空间相互独立</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>常规的单处理器属于SISD，常规的多处理器属于MIMD</li>
+<li>SIMD和MIMD是两种并行计算模式
+<ul>
+<li>SIMD是数据级并行模式</li>
+<li>MIMD是并行程度更高的线程级或更高级的并行模式</li>
+</ul>
+</li>
+<li>向量处理器
+<ul>
+<li>是SIMD的变体</li>
+<li>特征
+<ul>
+<li>一条指令的处理对象是向量</li>
+<li>擅长对向量型数据并行计算、浮点数运算，常被用于超级计算机中，处理科学研究中巨大运算量</li>
+</ul>
+</li>
+<li>硬件组成
+<ul>
+<li>多个处理单一+多组向量寄存器</li>
+<li>主存储器采用交叉多模块存储器</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>共享内存多处理器SMP
+<ul>
+<li>多处理器系统</li>
+<li>多个处理器共享一个主存储器</li>
+</ul>
+</li>
+<li>多核处理器
+<ul>
+<li>一个CPU芯片包含多个处理器</li>
+<li>所有核共享一个LLC，共享主存储器</li>
+</ul>
+</li>
+<li>硬件多线程可用于单核处理器和多核处理器</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/series/jz_qh/p5.jpg" alt=""></p>
+<h2 id="总线">总线</h2>
+<p>突发传输是指连续进行数据传输</p>
+<p>在单总线系统中ALU的输入端设置暂存器的原因：数据要分两次输入ALU，必须设置暂存器暂存一个端口的数据</p>
+<p>电路大题常见部件</p>
+<ul>
+<li>暂存器：暂存数据</li>
+<li>译码器：将输入的二进制代码翻译成对应的输出信号</li>
+<li>三态门：控制数据通路的连接与断开</li>
+<li>加法器：加法操作</li>
+<li>移位器：移位操作</li>
+</ul>
+<p>总线标准</p>
+<ul>
+<li>PCI：外部设备之间互连</li>
+<li>PCI-Express：串行传输</li>
+<li>USB：串行传输，连接IO接口和外部IO设备</li>
+</ul>
+<p>PCI-Express和USB都是串行传输</p>
+<p>各个总线通过桥接器连接，桥接器起流量交换的作用，消除总线间的速度差异</p>
+<p>异步总线中的握手过程一次交换多位数据</p>
+<p>双总线结构</p>
+<ul>
+<li>主存总线：CPU、主存、通道之间通信</li>
+<li>IO总线：IO设备与通道之间通信<br>
+三总线结构</li>
+<li>主存总线：CPU、主存之间通信</li>
+<li>IO总线：CPU、IO设置之间通信</li>
+<li>DMA总线：IO设备、主存之间通信</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/series/jz_qh/p6.jpg" alt=""></p>
+<h2 id="输入输出系统">输入输出系统</h2>
+<p>USB是串行设备，只能一位一位传输数据</p>
+<p>IO接口与CPU之间的IO总线</p>
+<ul>
+<li>数据线：能双向传输，所以从IO发往CPU的数据只能通过数据线，如IO接口中的命令字、状态字以及中断类型号等。通过数据线将状态信息送到CPU，CPU对IO的控制命令也通过数据线发送（真正意义上的控制线）</li>
+<li>地址线：单向传输：CPU-&gt;IO接口</li>
+<li>控制线：单向传输：CPU-&gt;IO接口。包括读写信号、仲裁信号和握手信号等（虚假的控制线）</li>
+</ul>
+<p>中断向量保存的是中断服务程序的入口地址</p>
+<p>中断处理过程（重点）</p>
+<ul>
+<li>（硬件/中断隐指令自动完成）
+<ul>
+<li>关中断</li>
+<li>保存断点（保存下一条指令的地址PC和PSW）</li>
+<li>中断服务程序寻址（从用户态—&gt;核心态）</li>
+</ul>
+</li>
+<li>（中断服务程序/操作系统完成）
+<ul>
+<li>保存现场和屏蔽字（保存用户工作/通用寄存器内容）</li>
+<li>开中断</li>
+<li>执行中断服务程序</li>
+<li>关中断</li>
+<li>恢复现场和屏蔽字</li>
+<li>开中断</li>
+<li>中断返回</li>
+</ul>
+</li>
+</ul>
+<p>内部异常发现马上处理，不用等到指令执行结束再执行</p>
+<p>只有中断请求信号，没有中断结束信号。中断服务的最后一条指令是中断返回指令，外设无需发出中断结束信号</p>
+<p>关于回到当前指令还是下一条指令</p>
+<ul>
+<li>异常
+<ul>
+<li>可能回到当前指令：如缺页处理，回到当前指令</li>
+<li>可能回到下一条指令：如系统调用、非法指令（除数为0）回到下一条指令</li>
+</ul>
+</li>
+<li>中断（中断的断点保存的是下一条指令的地址）
+<ul>
+<li>可能回到当前指令</li>
+<li>可能回到下一条指令：如DMA传送结束、打印机缺纸</li>
+</ul>
+</li>
+</ul>
+<p>单极中断的过程：关中断-&gt;保存断点-&gt;识别中断源-&gt;保存现场-&gt;中断事件处理-&gt;恢复现场-&gt;开中断-&gt;中断返回</p>
+<p>磁盘的最小读写单位为一个扇区</p>
+<p>磁盘的扇区中包含数据、地址和校验信息</p>
+<p>DMA的传送方式</p>
+<ul>
+<li>停止CPU访存：IO请求时，CPU放弃总线，IO数据传送结束后，CPU才可以访存</li>
+<li>周期挪用
+<ul>
+<li>IO访存优先级高于CPU访存</li>
+<li>IO设备挪用几个存取周期，传送完一个数据后立即释放总线（相当于每次传送一个字后释放总线，下次再找一个周期传输）</li>
+<li>传完一个数据，释放总线，期间CPU可以使用总线访存，DMA准备数据完成后，再发出一个请求</li>
+<li>是单字传送</li>
+</ul>
+</li>
+<li>DMA与CPU交替访存：将CPU周期分为两个周期，分时控制（适合CPU工作周期&gt;主存存取周期的情况）</li>
+</ul>
+<p>DAM传送过程</p>
+<ul>
+<li>预处理：CPU完成准备工作，且在数据传送前DMA控制器请求总线使用权</li>
+<li>数据传送：数据传送阶段完全由DMA硬件控制</li>
+<li>后处理：DMA控制器向CPU发出中断请求</li>
+</ul>
+<p>IO访存优先级高于CPU访存的原因：IO不立即访存则可能丢失数据</p>
+<p>DMA方式和中断方式的区别</p>
+<ul>
+<li>DMA不中断现行程序，不需要保护现场</li>
+<li>中断响应只能发送在指令执行结束，而DMA请求响应可以发送在任意机器周期结束</li>
+<li>中断请求需要CPU干预，DMA不需要</li>
+<li>DMA请求优先级高于中断请求</li>
+<li>中断方式有处理异常的能力，DMA仅用于大批数据的传送</li>
+<li>中断方式靠程序传送，DMA靠硬件传送</li>
+<li>DMA适合低速设备（字符型设备），DMA适合高速设备</li>
+</ul>
+<p>IO接口是主机和外设之间的交接界面，通常在CPU外部（磁盘驱动器不属于IO接口）</p>
+<ul>
+<li>IO端口：IO接口中能被CPU之间访问的寄存器
+<ul>
+<li>数据端口</li>
+<li>状态端口</li>
+<li>控制端口</li>
+</ul>
+</li>
+<li>IO接口：若干端口+相应控制逻辑电路</li>
+</ul>
+<p>统一编址和独立编址的区别</p>
+<ul>
+<li>统一编址：把主存地址空间分配给IO地址，访存和访问IO的指令相同</li>
+<li>独立编址：访存和IO为独立的地址空间，无法从地址码的形式上区分，要设置专门的访问IO指令</li>
+</ul>
+<p>IO指令：由CPU发出，读取外设数据（本质上是读取IO端口）</p>
+<p>通过INTR发出的是可屏蔽中断，NMI发出的是不可屏蔽不可屏蔽中断，内部异常也是不可屏蔽中断，即使在关中断下也会被响应</p>
+<p>中断优先级</p>
+<ul>
+<li>不可屏蔽中断&gt;内部异常&gt;可屏蔽中断</li>
+<li>内部异常中：硬件故障&gt;软件故障</li>
+<li>DMA中断&gt;IO中断</li>
+<li>高速设备&gt;低速设备</li>
+<li>输入设备&gt;输出设备</li>
+<li>实时设备&gt;普通设备</li>
+</ul>
+<p>IO方式</p>
+<ul>
+<li>程序查询方式</li>
+<li>程序中断方式</li>
+<li>DMA方式</li>
+</ul>
+<p>程序查询方式</p>
+<ul>
+<li>程序查询方式接口中设置一个数据端口和一个状态端口</li>
+<li>CPU与IO串行工作</li>
+</ul>
+<p>计算IO时间占比整个CPU时间</p>
+<ul>
+<li>先计算1s要响应多少次
+<ul>
+<li>设备数据传输率=x kB/s表示1s内设备要传输xkB的数据</li>
+<li>中断方式下
+<ul>
+<li>数据缓冲寄存器的位数：一次中断能传输的数据大小</li>
+<li>中断的传输单位是字，也就是缓冲寄存器大小</li>
+<li>1s内中断次数=设备数据传输速率/数据缓冲寄存器大小</li>
+</ul>
+</li>
+<li>DMA方式下
+<ul>
+<li>DMA的传输单位是数据块</li>
+<li>DMA方式下：中断次数=设备传输速率/数据块大小</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>再计算响应一次的时间
+<ul>
+<li>中断方式下
+<ul>
+<li>一次中断响应和处理的时间=中断服务的总开销的指令数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span>CPI</li>
+<li>一次DMA响应的时间=DMA预处理和后处理的时间（数据传送过程由DMA控制，不消耗CPU时间）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>最后计算占比：响应一次时间$\times$1s内响应次数</li>
+<li>其他注意事项
+<ul>
+<li>计算定时查询方式中设备最多间隔多长时间查询一次才能不丢数据：1/1s内中断次数</li>
+<li>判断能否采用中断方式
+<ul>
+<li>准备一次数据的时间t1=数据缓冲寄存器大小/设备传输速率</li>
+<li>一次中断响应和处理时间t2</li>
+<li>若t1&lt;t2则数据会被刷新，造成丢失，不能使用中断方式</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>中断屏蔽字：自己和优先级更低的为1，优先级更高的为0<br>
+由于中断屏蔽字的存在，CPU检测不到优先级更低的中断请求信号，若检测到中断信号，则必为优先级更高的中断，立即响应。<br>
+即在开中断下，CPU检测到中断请求必然响应</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/series/jz_qh/p7.jpg" alt=""></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://chaoblog.site">Chao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://chaoblog.site/2023/09/23/%E8%AE%A1%E7%BB%84%E5%BC%BA%E5%8C%96/">http://chaoblog.site/2023/09/23/%E8%AE%A1%E7%BB%84%E5%BC%BA%E5%8C%96/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://chaoblog.site" target="_blank">去他妈的生活</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/408/">408</a><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></div><div class="post_share"><div class="social-share" data-image="/img/series/jz_qh/jz.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/09/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%BA%E5%8C%96/" title="操作系统强化"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/series/os_qh/os.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">操作系统强化</div></div></a></div><div class="next-post pull-right"><a href="/2023/09/23/%E8%AE%A1%E7%BD%91%E5%BC%BA%E5%8C%96/" title="计网强化"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/series/jw_qh/net.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">计网强化</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/09/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%BA%E5%8C%96/" title="操作系统强化"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/series/os_qh/os.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-23</div><div class="title">操作系统强化</div></div></a></div><div><a href="/2023/09/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%BC%BA%E5%8C%96/" title="数据结构强化"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/code.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-23</div><div class="title">数据结构强化</div></div></a></div><div><a href="/2023/09/23/%E8%AE%A1%E7%BD%91%E5%BC%BA%E5%8C%96/" title="计网强化"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/series/jw_qh/net.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-23</div><div class="title">计网强化</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Chao</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/God-Chao"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/God-Chao" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:chaoccc22@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://twitter.com/Chao_2222" target="_blank" title="Twitter"><i class="fab fa-twitter" style="color: #1C9EEF;"></i></a><a class="social-icon" href="https://www.instagram.com/chaoc_cc/" target="_blank" title="instagram"><i class="fab fa-instagram" style="color: #FF0B52;"></i></a><a class="social-icon" href="https://space.bilibili.com/628951889" target="_blank" title="bilibili"><i class="fab fa-bilibili" style="color: #00AEEC;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Life Sucks</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">计算机系统概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97"><span class="toc-number">2.</span> <span class="toc-text">数据的表示和运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.</span> <span class="toc-text">存储系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="toc-number">4.</span> <span class="toc-text">指令系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">5.</span> <span class="toc-text">中央处理器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF"><span class="toc-number">6.</span> <span class="toc-text">总线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F"><span class="toc-number">7.</span> <span class="toc-text">输入输出系统</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('/img/series/jz_qh/jz.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By Chao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">今天你活着吗</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="/js/tw_cn.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script></div></body></html>
